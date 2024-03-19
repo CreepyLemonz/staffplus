@@ -1,0 +1,17 @@
+name: staffplus
+version: '${version}'
+main: me.lexilemonz.staffplus.Staffplus
+api-version: '1.20'
+commands:
+  staffchat:
+    usage: /<command>
+    aliases:
+      - sc
+  stafflist:
+    usage: /<command>
+    aliases:
+      - sl
+permissions:
+  staffplus.staffchat:
+    description: Allows usage of /staffchat and /stafflist commands
+    default: false
