@@ -22,7 +22,7 @@ public class StaffChatDataUtil {
 
     public static boolean isStaffChatEnabled(UUID playerUUID) {
         Boolean enabled = staffChatStatuses.get(playerUUID);
-        return enabled != null && enabled.booleanValue();
+        return enabled != null && enabled;
     }
 
     public static void updatePlayerFromStaffChatStatuses(UUID playerUUID) {
