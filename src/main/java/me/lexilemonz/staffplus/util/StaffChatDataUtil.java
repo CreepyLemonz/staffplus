@@ -11,7 +11,7 @@ public class StaffChatDataUtil {
     private static final Map<UUID, Boolean> staffChatStatuses = new HashMap<>();
     public static void toggleStaffChat(Player player) {
         UUID playerUUID = player.getUniqueId();
-        boolean currentStatus = staffChatStatuses.get(playerUUID);
+        Boolean currentStatus = staffChatStatuses.get(playerUUID);
         staffChatStatuses.put(playerUUID, !currentStatus);
         if (!currentStatus) {
             NotifierUtil.notify(player, ChatColor.GREEN + "Toggled staff chat on");
