@@ -2,7 +2,6 @@ package me.lexilemonz.staffplus.listeners;
 
 import me.lexilemonz.staffplus.Staffplus;
 import me.lexilemonz.staffplus.util.NotifierUtil;
-import me.lexilemonz.staffplus.util.StaffChatDataUtil;
 import me.lexilemonz.staffplus.util.StaffListUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -28,8 +27,6 @@ public class PlayerJoinLeaveListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         if (player.hasPermission("staffplus.staffchat")) {
-            UUID playerUUID = player.getUniqueId();
-            StaffChatDataUtil.updatePlayerFromStaffChatStatuses(playerUUID);
             NotifierUtil.notifyAll(player, ChatColor.GREEN + "joined the game.");
             scheduler.runTaskLater(plugin, () -> {
                 StaffListUtil.sendOnlineStaffList(player);
@@ -41,8 +38,6 @@ public class PlayerJoinLeaveListener implements Listener {
     public void onPlayerQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
         if (player.hasPermission("staffplus.staffchat")) {
-            UUID playerUUID = player.getUniqueId();
-            StaffChatDataUtil.updatePlayerFromStaffChatStatuses(playerUUID);
             NotifierUtil.notifyAll(player, ChatColor.RED + "left the game.");
         }
     }

@@ -2,7 +2,6 @@ package me.lexilemonz.staffplus.commands;
 
 import me.lexilemonz.staffplus.Staffplus;
 import me.lexilemonz.staffplus.util.NotifierUtil;
-import me.lexilemonz.staffplus.util.StaffChatDataUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -32,9 +31,6 @@ public class StaffChatCommand implements CommandExecutor {
 
         if (args.length == 0) {
             NotifierUtil.notify(player, ChatColor.RED + "You need to type something silly.");
-            return true;
-        } else if (args.length == 1 && args[0].equalsIgnoreCase("toggle")) {
-            StaffChatDataUtil.toggleStaffChat(player);
             return true;
         } else {
             String message = String.join(" ", args);
