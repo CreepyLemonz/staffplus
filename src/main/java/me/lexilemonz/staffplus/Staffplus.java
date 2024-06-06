@@ -2,7 +2,6 @@ package me.lexilemonz.staffplus;
 
 import me.lexilemonz.staffplus.commands.StaffChatCommand;
 import me.lexilemonz.staffplus.commands.StaffListCommand;
-import me.lexilemonz.staffplus.listeners.PlayerChatListener;
 import me.lexilemonz.staffplus.listeners.PlayerJoinLeaveListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
